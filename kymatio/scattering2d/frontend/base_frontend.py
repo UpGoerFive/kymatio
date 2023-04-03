@@ -41,19 +41,19 @@ class ScatteringBase2D(ScatteringBase):
     def scattering(self, x):
         """ This function should call the functional scattering."""
         raise NotImplementedError
-    def refactor_plot_mst(self, x, src_img=None, label=None, cmap0='gray', cmap1='gray', cmap2='gray', log_r=False, r_is_scale=True, two_pi=False):
+    def plot_mst(self, x=None, scat_coeffs=None, src_img=None, label=None, cmap0='gray', cmap1='gray', cmap2='gray', log_r=False, r_is_scale=True, two_pi=False):
         '''
-        Plots the first and second order transforms and prints oult the 0th order transform, and
+        Authors: Dr. Michael Glinsky and Francis Ogoke
+
+        Plots the first and second order transforms and prints out the 0th order transform, and
         optionally the original image if it is given
 
         Parameters
         ----------
+        x : The input data array for scattering, as would be done with self.scattering(x). Either x or
+            scat_coeffs must be provided.
         scat_coeffs : numpy 3D array with indexes (MST_coeff_idx, MST_patch_i, MST_patch_j)
             Coefficients of the MST.
-        J : int
-            log2 of the samples in the patch, if J=log2(image) then there will be only one patch.
-        L : int
-            log2 of the number of angular sectors of the first order MST.
         src_img : numpy 2D array, optional
             image corresponding to the scat_coeffs. The default is None is plotted.
         label : str, optional
@@ -71,6 +71,11 @@ class ScatteringBase2D(ScatteringBase):
         two_pi : bool, optional
             plot the second order sector from 0 to 2*pi, otherwise plot from 0 to pi. The default is False.
 
+        Internal attributes used:
+        J : int
+            log2 of the samples in the patch, if J=log2(image) then there will be only one patch.
+        L : int
+            log2 of the number of angular sectors of the first order MST.
         Raises
         ------
         Exception
@@ -84,7 +89,9 @@ class ScatteringBase2D(ScatteringBase):
         '''
         J = self.J
         L = self.L
-        scat_coeffs = self.scattering(x)
+        if not x and not scat_coeffs:
+            raise ValueError("Either x or scat_coeffs must be provided.")
+        scat_coeffs = self.scattering(x) if not scat_coeffs else scat_coeffs
         FONT_SIZE = 16
 
         # add option to plot colorbars
