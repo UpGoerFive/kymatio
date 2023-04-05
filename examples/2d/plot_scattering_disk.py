@@ -18,6 +18,7 @@ import numpy as np
 from kymatio import Scattering2D
 from PIL import Image
 import os
+from plot2d import plot_mst
 
 img_name = os.path.join(os.getcwd(), "images/digit.png")
 
@@ -190,3 +191,6 @@ for row in range(window_rows):
                                width=np.pi / L ** 2,
                                bottom=radius + (radius / 2 ** (J - 2 - j1)) * (J - j2 - 1),
                                color=color)
+
+
+plot_mst(scat_coeffs=scat_coeffs, J=J, L=L, src_img=src_img, cmap1='plasma', cmap2='viridis')
