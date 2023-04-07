@@ -192,5 +192,7 @@ for row in range(window_rows):
                                bottom=radius + (radius / 2 ** (J - 2 - j1)) * (J - j2 - 1),
                                color=color)
 
+plt.savefig("old_style.png")
 
 plot_mst(scat_coeffs=scat_coeffs, J=J, L=L, src_img=src_img, cmap1='plasma', cmap2='viridis')
+plt.savefig("new_style.png")
