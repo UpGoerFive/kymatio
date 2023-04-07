@@ -194,5 +194,5 @@ for row in range(window_rows):
 
 plt.savefig("old_style.png")
 
-plot_mst(scat_coeffs=scat_coeffs, J=J, L=L, src_img=src_img, cmap1='plasma', cmap2='viridis')
+plot_mst(scat_coeffs=scat_coeffs, J=J, L=L, src_img=src_img)
 plt.savefig("new_style.png")
