@@ -194,5 +194,7 @@ for row in range(window_rows):
 
 plt.savefig("old_style.png")
 
+####################################################################
+# Slightly updated functionality is provided in the plotting module of Kymatio, and can be used as follows:
 plot_mst(scat_coeffs=scat_coeffs, J=J, L=L, src_img=src_img)
 plt.savefig("new_style.png")
