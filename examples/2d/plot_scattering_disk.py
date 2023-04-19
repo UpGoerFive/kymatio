@@ -18,7 +18,7 @@ import numpy as np
 from kymatio import Scattering2D
 from PIL import Image
 import os
-from plot2d import plot_mst
+from kymatio.plotting.plot2d import plot_mst
 
 img_name = os.path.join(os.getcwd(), "images/digit.png")
 

@@ -7,6 +7,8 @@ import numpy as np
 
 def plot_mst(scat_coeffs, J, L, src_img=None, label=None, cmap0='gray', cmap1='gray', cmap2='gray', log_r=False, r_is_scale=True, two_pi=False):
     '''
+    Authors: Dr. Michael Glinsky and Francis Ogoke.
+
     Plots the first and second order transforms and prints oult the 0th order transform, and
     optionally the original image if it is given
 
@@ -274,6 +276,8 @@ def plot_mst(scat_coeffs, J, L, src_img=None, label=None, cmap0='gray', cmap1='g
 
 def refactor_plot_mst(scat_coeffs, J, L, src_img=None, label=None, cmap0='gray', cmap1='gray', cmap2='gray', log_r=False, r_is_scale=True, two_pi=False):
     '''
+    Authors: Dr. Michael Glinsky and Francis Ogoke.
+
     Plots the first and second order transforms and prints oult the 0th order transform, and
     optionally the original image if it is given
 
@@ -524,6 +528,7 @@ def refactor_plot_mst(scat_coeffs, J, L, src_img=None, label=None, cmap0='gray',
 
 def scatnet_to_Kymatio_reorder(array, J, L):
     """
+    Author: Nathaniel Martin
     Reorders a scatnet ordered coefficient array to Kymatio ordering, in other words, reverses the L ordering.
     Max order can be 1 or 2.
     """
