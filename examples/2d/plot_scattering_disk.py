@@ -192,9 +192,9 @@ for row in range(window_rows):
                                bottom=radius + (radius / 2 ** (J - 2 - j1)) * (J - j2 - 1),
                                color=color)
 
-plt.savefig("old_style.png")
+# plt.savefig("old_style.png")
 
 ####################################################################
 # Slightly updated functionality is provided in the plotting module of Kymatio, and can be used as follows:
 plot_mst(scat_coeffs=scat_coeffs, J=J, L=L, src_img=src_img)
-plt.savefig("new_style.png")
+# plt.savefig("new_style.png")
